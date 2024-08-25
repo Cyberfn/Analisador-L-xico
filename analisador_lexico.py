@@ -52,4 +52,4 @@ print("\nContagem de tokens:")
 for tipo_token, quantidade in contagem.items():
     print(f"{tipo_token}: {quantidade}")
 
-print(f"\nTotal de tokens: {total}")
+print(f"\nTotal de tokens: {total}\n")
