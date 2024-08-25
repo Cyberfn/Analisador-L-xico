@@ -1,7 +1,7 @@
 import re
 
 token_patterns = [
-    ('palavra_chave', r'\b(if|else|while|return|function|def|for|break|continue|class|try|except|finally|import|from|as|with|pass|yield|lambda|assert|raise|del|global|nonlocal|True|False|None|and|or|not|is|in)\b'),
+    ('palavra_chave', r'\b(print|if|else|while|return|function|def|for|break|continue|class|try|except|finally|import|from|as|with|pass|yield|lambda|assert|raise|del|global|nonlocal|True|False|None|and|or|not|is|in)\b'),
     ('identificador', r'\b[a-zA-Z_][a-zA-Z0-9_]*\b'),
     ('numero', r'\b\d+\b'),
     ('string', r'"[^"]*"|\'[^\']*\''),
