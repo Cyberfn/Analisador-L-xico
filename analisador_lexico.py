@@ -1,5 +1,8 @@
 import re
+import tkinter as tk
+from tkinter import scrolledtext, messagebox
 
+# Função de análise léxica
 token_patterns = [
     ('palavra_chave', r'\b(print|if|else|while|return|function|def|for|break|continue|class|try|except|finally|import|from|as|with|pass|yield|lambda|assert|raise|del|global|nonlocal|True|False|None|and|or|not|is|in)\b'),
     ('identificador', r'\b[a-zA-Z_][a-zA-Z0-9_]*\b'),
@@ -39,16 +42,37 @@ def contar_tokens(tokens):
     contagem_total = sum(contagem.values())
     return contagem, contagem_total
 
-codigo = input("Digite o código a ser analisado: ")
+# Função para atualizar a interface com tokens e contagens
+def analisar_codigo():
+    codigo = text_input.get("1.0", tk.END)
+    try:
+        tokens = tokenize(codigo)
+        contagem, total = contar_tokens(tokens)
+        
+        resultado_texto = "Tokens encontrados:\n"
+        resultado_texto += "\n".join(f"{token}" for token in tokens)
+        resultado_texto += "\n\nContagem de tokens:\n"
+        resultado_texto += "\n".join(f"{tipo_token}: {quantidade}" for tipo_token, quantidade in contagem.items())
+        resultado_texto += f"\n\nTotal de tokens: {total}"
+        
+        result_label.config(text=resultado_texto)
+        
+    except RuntimeError as e:
+        messagebox.showerror("Erro", str(e))
 
-contagem, total = contar_tokens(tokenize(codigo))
+# Criando a interface gráfica
+root = tk.Tk()
+root.title("Analisador Léxico")
 
-print("Tokens encontrados:")
-for token in tokenize(codigo):
-    print(token)
+# Widgets
+tk.Label(root, text="Código:").pack()
 
-print("\nContagem de tokens:")
-for tipo_token, quantidade in contagem.items():
-    print(f"{tipo_token}: {quantidade}")
+text_input = scrolledtext.ScrolledText(root, width=80, height=15)
+text_input.pack()
 
-print(f"\nTotal de tokens: {total}\n")
+tk.Button(root, text="Analisar", command=analisar_codigo).pack()
+
+result_label = tk.Label(root, text="", justify=tk.LEFT, anchor="w")
+result_label.pack(pady=10, padx=10, fill=tk.BOTH, expand=True)
+
+root.mainloop()
