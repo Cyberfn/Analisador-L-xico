@@ -2,7 +2,6 @@ import re
 import tkinter as tk
 from tkinter import scrolledtext, messagebox
 
-# Função de análise léxica
 token_patterns = [
     ('palavra_chave', r'\b(print|if|else|while|return|function|def|for|break|continue|class|try|except|finally|import|from|as|with|pass|yield|lambda|assert|raise|del|global|nonlocal|True|False|None|and|or|not|is|in)\b'),
     ('identificador', r'\b[a-zA-Z_][a-zA-Z0-9_]*\b'),
@@ -42,7 +41,6 @@ def contar_tokens(tokens):
     contagem_total = sum(contagem.values())
     return contagem, contagem_total
 
-# Função para atualizar a interface com tokens e contagens
 def analisar_codigo():
     codigo = text_input.get("1.0", tk.END)
     try:
@@ -60,7 +58,6 @@ def analisar_codigo():
     except RuntimeError as e:
         messagebox.showerror("Erro", str(e))
 
-# Criando a interface gráfica
 root = tk.Tk()
 root.title("Analisador Léxico")
 
