@@ -30,3 +30,4 @@ print(f"Total de tokens: {len(tokens)}")
 
 for token_type, value in tokens:
     print(f"{token_type}: {value}")
+    
