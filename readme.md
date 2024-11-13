@@ -1,10 +1,10 @@
 # Analisador Léxico em Python
 
-Este projeto é um **Analisador Léxico** simples, implementado em Python usando a biblioteca Tkinter para uma interface gráfica. O analisador identifica e conta diferentes tipos de tokens em um código fonte, como palavras-chave, identificadores, números, strings, operadores, delimitadores e espaços em branco.
+Este projeto é um **Analisador Léxico** básico em Python com interface gráfica usando Tkinter. Ele identifica e conta diferentes tipos de tokens em códigos fonte, como palavras-chave, identificadores, números, strings, operadores, delimitadores e espaços em branco.
 
 ## Funcionalidades
 
-- **Identificação de Tokens**: O analisador pode identificar e categorizar os seguintes tipos de tokens:
+- **Identificação de Tokens**: O analisador categoriza os seguintes tokens:
   - Palavras-chave do Python
   - Identificadores
   - Números
@@ -12,8 +12,8 @@ Este projeto é um **Analisador Léxico** simples, implementado em Python usando
   - Delimitadores
   - Operadores
   - Espaços em branco
-- **Contagem de Tokens**: Além de identificar tokens, o programa também conta quantas vezes cada tipo de token aparece no código fornecido.
-- **Interface Gráfica**: A aplicação possui uma interface gráfica simples para entrada de código e visualização dos resultados.
+- **Contagem de Tokens**: Conta a quantidade de ocorrências de cada tipo de token no código fornecido.
+- **Interface Gráfica**: Possui uma interface gráfica simples para entrada e visualização dos resultados da análise.
 
 ## Como Usar
 
@@ -24,39 +24,29 @@ Este projeto é um **Analisador Léxico** simples, implementado em Python usando
    ```
 
 2. **Instale as Dependências**:
-   Este projeto utiliza apenas a biblioteca padrão do Python. Portanto, você não precisa instalar dependências adicionais.
+   Não há dependências adicionais; o projeto usa apenas bibliotecas padrão do Python.
 
 3. **Execute o Programa**:
-   Você pode executar o programa diretamente com Python:
    ```bash
    python analisador_lexico.py
    ```
 
 4. **Entrada de Código**:
-   - Cole o código que deseja analisar na área de texto.
-   - Clique no botão "Analisar" para processar o código.
+   - Cole o código a ser analisado na área de texto.
+   - Clique em "Analisar" para processar o código.
 
 5. **Resultados**:
-   - Os resultados da análise aparecerão abaixo do botão, mostrando cada tipo de token encontrado, a contagem de cada um, e o total de tokens analisados.
-
-## Exemplo de Uso
-
-Aqui está um exemplo simples de código Python que pode ser analisado:
-
-```python
-def hello_world():
-    print("Hello, world!")
-```
+   - Os resultados mostram os tipos de tokens encontrados, a contagem de cada tipo e o total de tokens.
 
 ## Estrutura do Código
 
-- **Especificação dos Tokens**: Definido no início do script, onde cada tipo de token é descrito com uma expressão regular.
-- **Função `lexer`**: Função principal que realiza a análise léxica e retorna os tokens encontrados.
-- **Interface Gráfica**: Criada usando Tkinter, que permite a entrada do código e exibe os resultados da análise.
+- **Especificação dos Tokens**: Lista de tokens especificada com expressões regulares no início do script.
+- **Função `tokenize`**: Realiza a análise léxica e retorna uma lista dos tokens identificados.
+- **Interface Gráfica**: A interface criada com Tkinter permite a entrada e visualização dos resultados da análise.
 
 ## Contribuições
 
-Contribuições são bem-vindas! Se você deseja contribuir para este projeto, por favor, abra uma issue ou faça um fork do repositório.
+Contribuições são bem-vindas! Para contribuir, abra uma issue ou faça um fork do repositório.
 
 ## Licença
 
